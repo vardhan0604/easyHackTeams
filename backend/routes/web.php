@@ -17,36 +17,43 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::post('/user/login', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::post('/user/register', function () {
     return view('welcome');
 });
 
-
-Route::get('/', function () {
+Route::post('/user/get-profile', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::get('/search', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::post('/teams/create-team', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::get('/teams/get-my-teams', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::get('/invites/get-current-invites', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
+Route::post('/invites/accept-invite', function () {
+    return view('welcome');
+});
+
+Route::post('/invites/decline-invites', function () {
+    return view('welcome');
+});
+
+Route::post('/test', function () {
     return view('welcome');
 });
 
