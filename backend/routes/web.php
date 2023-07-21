@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,17 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/user/login', function () {
-    return view('welcome');
-});
+Route::post('/user/login',[UsersController::class, 'login']);
 
-Route::post('/user/register', function () {
-    return view('welcome');
-});
+Route::post('/user/register', [UsersController::class, 'register']);
 
-Route::get('/user/get-profile', function () {
-    return view('welcome');
-});
+Route::get('/user/get-profile/{username}', [UsersController::class, 'showProfile']);
 
 Route::get('/search', function () {
     return view('welcome');
