@@ -25,7 +25,7 @@ Route::post('/user/register', function () {
     return view('welcome');
 });
 
-Route::post('/user/get-profile', function () {
+Route::get('/user/get-profile', function () {
     return view('welcome');
 });
 
@@ -53,7 +53,7 @@ Route::post('/invites/decline-invites', function () {
     return view('welcome');
 });
 
-Route::post('/test', function () {
+Route::get('/test', function () {
     return view('welcome');
 });
 
