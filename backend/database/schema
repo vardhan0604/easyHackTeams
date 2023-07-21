@@ -2,6 +2,7 @@ easyHackTeams DB:
     users - 
         1. userid
         2. username
+        -. password
         3. email
         3. interests
         4. teams
