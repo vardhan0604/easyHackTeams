@@ -1,0 +1,18 @@
+easyHackTeams DB:    
+    users - 
+        1. userid
+        2. username
+        3. interests
+        4. teams
+        5. createdteams
+        6. invites
+
+
+    teams:
+        1. teamid
+        2. teamname
+        3. teamcreator
+        4. teamabout
+        5. createdon
+        5. members
+        
