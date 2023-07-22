@@ -1,15 +1,44 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import axios from "axios";
+import toast from "react-hot-toast"
+
+
 
 const Register = () => {
     const[name,setName]=React.useState("");
     const[email,setEmail]=React.useState("");
     const[skills,setSkills]=React.useState("");
     const[password,setPassword]=React.useState("");
+    
 
-    const onSubmit=(e)=>{
-        e.preventDefault();
-    }
+    const onSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post(
+          'http://127.0.0.1:8000/user/register', // Corrected endpoint for user registration
+          {
+            username: name,
+            email: email,
+            password: password,
+            interests: skills,
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        // Handle the response data here (e.g., show success message, redirect user, etc.)
+        console.log(response.data);
+        toast.success('Registration successful!');
+      } catch (error) {
+        // Handle any errors that occur during the request
+        console.log('Error:', error);
+        toast.error('Registration failed. Please try again.');
+      }
+    };
+
 
   return (
     <div>
