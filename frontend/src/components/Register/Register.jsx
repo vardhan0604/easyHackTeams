@@ -14,11 +14,23 @@ const Register = () => {
   return (
     <div>
         <form onSubmit={onSubmit} style={styles.form}>
-            <input type="text" placeholder='Name' onChange={(e)=>{setName(e.target.value)}}/>
-            <input type="text" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input type="text" placeholder='Skills/Interests   (seperate with commas)' onChange={(e)=>{setSkills(e.target.value)}}/>
-            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
-            <button>Sign Up</button>
+         <div className="mb-2">
+            <label className="form-label">Name</label>
+            <input type="text" className='form-control' placeholder='Name' onChange={(e)=>{setName(e.target.value)}}/>
+         </div>
+         <div className="mb-2">
+            <label className="form-label">Email address</label>
+            <input type="text" className='form-control' placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}}/>
+         </div>
+         <div className="mb-2">
+            <label className="form-label">Skills/Interests</label>
+            <input type="text" className='form-control' placeholder='(seperate with commas)' onChange={(e)=>{setSkills(e.target.value)}}/>
+         </div>
+         <div className="mb-2">
+            <label className="form-label">Password</label>
+            <input type="password"  className='form-control' placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
+         </div>
+            <button className="btn btn-primary">Sign Up</button>
         </form>
     </div>
   )
