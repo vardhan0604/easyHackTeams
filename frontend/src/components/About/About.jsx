@@ -1,8 +1,35 @@
+import axios from 'axios';
 import React from 'react'
 
 const About = () => {
     const skills=["HTML", "CSS" , "Javascript"];
     const teams =[{name:"Hacks for Hackers", teammates:["Harsh","Prakhar","Ananya"]},{name:"Hacks for Hackers", teammates:["Harsh","Prakhar","Ananya"]},{name:"Hacks for Hackers", teammates:["Harsh","Prakhar","Ananya"]},{name:"Hacks for Hackers", teammates:["Harsh","Prakhar","Ananya"]}]
+    const x=async()=> {
+        try {
+            const response = await axios.get(
+              `http://127.0.0.1:8000/user/profile/harsh`,
+              {
+                withCredentials: true,
+              }
+            );
+            console.log(response.data); // Log the data from the response
+          } catch (error) {
+            console.log(error);
+          }
+    }
+    
+    x();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     const els=skills.map((e)=>{
         return <span className="border rounded-pill px-3 py-2 m-2 d-inline-block">
             {e}
