@@ -8,10 +8,10 @@ use App\Models\Users;
 class UsersController extends Controller
 {
     public function login(Request $request) {
-        $username = $request->username;
+        $email = $request->email;
         $password = $request->password;
 
-        $userDetails = Users::where('username',$username)->where('password', $password)->first(['userid']);
+        $userDetails = Users::where('email',$email)->where('password', $password)->first(['userid']);
         $userExists = $userDetails->count();
         if(!$userExists)  {
             echo json_encode(array("userExists"=>0));
