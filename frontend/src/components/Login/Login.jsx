@@ -10,9 +10,15 @@ const Login = () => {
     
   return (
    <form style={styles.form} onSubmit={onSubmit}>
-    <input type="text" placeholder='Email'value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-    <input type="password" placeholder='Password' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-    <button>Login</button>
+    <div className='mb-2'>
+        <label className="form-label">Email address</label>
+        <input type="text" className='form-control' placeholder='Email'value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+    </div>
+    <div className='mb-2'>
+        <label className="form-label">Password</label>
+        <input type="password" placeholder='Password' value={password}  className='form-control' onChange={(e)=>{setPassword(e.target.value)}}/>
+    </div>
+    <button className="btn btn-primary">Login</button>
    </form>
   )
 }
