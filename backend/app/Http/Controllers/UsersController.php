@@ -42,7 +42,7 @@ class UsersController extends Controller
             $newUser->password = $password;
             $newUser->interests = $interests;
             $newUser->save();
-            return response()->json(["status"=>1, "msg"=>"Registeration successfull!"]);
+            return response()->json(["status"=>2, "msg"=>"Registeration successfull!"]);
         }
         catch(\Illuminate\Database\QueryException $e) {
             return response()->json(["status"=>0, "msg"=>"Query Failed!"]);
