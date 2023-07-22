@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/user/login',[UsersController::class, 'login'])->middleware('cors');
-Route::post('/user/register', [UsersController::class, 'register'])->middleware('cors');
+Route::post('/user/login',[UsersController::class, 'login']);
+Route::post('/user/register', [UsersController::class, 'register']);
 Route::get('/user/checkUserExistence/{userid}', [UsersController::class, 'checkUserExistence']);
 
 Route::get('/user/profile/{username}', [UsersController::class, 'showProfile']);
