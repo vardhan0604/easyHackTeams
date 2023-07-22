@@ -12,8 +12,7 @@ class UsersController extends Controller
         $password = $request->password;
 
         $userDetails = Users::where('email',$email)->where('password', $password)->first(['userid']);
-        $userExists = $userDetails->count();
-        if(!$userExists)  {
+        if(!$userDetails)  {
             echo json_encode(array("userExists"=>0));
             return ;
         }
@@ -22,7 +21,7 @@ class UsersController extends Controller
         return response($jsonResponse)->cookie("userId", $userDetails->userid);
     }
     public function register(Request $request) {
-        echo "register";
+
     }
     public function showProfile(Request $request) {
         $username = $request->username;
