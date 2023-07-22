@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import About from './components/About/About';
 // import About from './About';
 // import Contact from './Contact';
 
@@ -13,7 +14,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
