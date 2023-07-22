@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->longText('interests')->fulltext();
-            $table->longText('teams');
-            $table->longText('createdteams');
-            $table->longText('invites');
+            $table->longText('teams')->nullable();
+            $table->longText('createdteams')->nullable();
+            $table->longText('invites')->nullable();
         });
     }
 
