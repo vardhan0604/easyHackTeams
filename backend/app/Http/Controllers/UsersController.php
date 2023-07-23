@@ -19,7 +19,7 @@ class UsersController extends Controller
         }
 
         $jsonResponse = json_encode(array("userExists"=>1, "userId"=>$userDetails->userid));
-        return response($jsonResponse)->cookie("userId", $userDetails->userid);
+        return response($jsonResponse)->cookie("userId", $userDetails->userid, 60);
     }
     public function register(storeRegisterRequest $request) {
         
@@ -63,7 +63,6 @@ class UsersController extends Controller
 
         return response()->json($userDetails);
     }
-
     public function getMyProfile(Request $request) {
 
         $userid = $request->userid;
