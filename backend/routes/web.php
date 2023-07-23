@@ -18,10 +18,11 @@ Route::get('/', function () {
 });
 
 Route::post('/user/login',[UsersController::class, 'login']);
-
 Route::post('/user/register', [UsersController::class, 'register']);
+Route::get('/user/checkUserExistence/{userid}', [UsersController::class, 'checkUserExistence']);
 
-Route::get('/user/get-profile/{username}', [UsersController::class, 'showProfile']);
+Route::get('/user/profile/{username}', [UsersController::class, 'showProfile']);
+Route::post('/my-profile', [UsersController::class, 'getMyProfile']);
 
 Route::get('/search', function () {
     return view('welcome');
@@ -49,5 +50,5 @@ Route::post('/invites/decline-invites', function () {
 
 Route::get('/test', function () {
     return view('welcome');
-});
+})->middleware('cors');
 

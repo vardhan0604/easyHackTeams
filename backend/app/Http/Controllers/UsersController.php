@@ -50,7 +50,40 @@ class UsersController extends Controller
 
     }
     public function showProfile(Request $request) {
+
         $username = $request->username;
-        echo $username;
+        $userExists = Users::where('username', $username)->count();
+        if(!$userExists) {
+            return response()->json(["userExists"=>0, "msg"=>"User doesn't exists!"]);
+        }
+
+        $userDetails = Users::where('username',$username)->first(['userid', 'email', 'username', 'interests', 'teams', 'createdteams']);
+        $userDetails = $userDetails->toArray();
+        $userDetails['userExists'] = "1";
+
+        return response()->json($userDetails);
+    }
+
+    public function getMyProfile(Request $request) {
+
+        $userid = $request->userid;
+        $userExists = Users::where('userid', $userid)->count();
+        if(!$userExists) {
+            return response()->json(["userExists"=>0, "msg"=>"User doesn't exists!"]);
+        }
+
+        $userDetails = Users::where('userid',$userid)->first(['userid', 'email', 'username', 'interests', 'teams', 'createdteams']);
+        $userDetails = $userDetails->toArray();
+        $userDetails['userExists'] = "1";
+
+        return response()->json($userDetails);
+    }
+
+    public function checkUserExistence(Request $request) {
+        $userid = $request->userid;
+        $userExists = Users::where('userid',$userid)->count();
+        
+        return response()->json(["status"=>$userExists]);
+        
     }
 }
