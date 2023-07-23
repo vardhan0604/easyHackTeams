@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #ffffff ; /* off-white */
+}
+
+/* Profile section styling */
+.profile {
+  background-color: #6a0dad; /* purple */
+  color: #f8f8ff; /* white */
+  padding: 20px;
+}
+
+/* Community list styling */
+.community-list {
+  background-color: #f8f8ff; /* white */
+  padding: 20px;
+}
+
+/* Dashboard styling */
+.dashboard {
+  background-color: #ffffff; /* white */
+  padding: 20px;
+}
