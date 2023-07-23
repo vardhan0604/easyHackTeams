@@ -19,7 +19,7 @@ class UsersController extends Controller
         }
 
         $jsonResponse = json_encode(array("userExists"=>1, "userId"=>$userDetails->userid));
-        return response($jsonResponse)->cookie("userId", $userDetails->userid);
+        return response($jsonResponse)->cookie("userId", $userDetails->userid, 60);
     }
     public function register(storeRegisterRequest $request) {
         
@@ -58,6 +58,20 @@ class UsersController extends Controller
         }
 
         $userDetails = Users::where('username',$username)->first(['userid', 'email', 'username', 'interests', 'teams', 'createdteams']);
+        $userDetails = $userDetails->toArray();
+        $userDetails['userExists'] = "1";
+
+        return response()->json($userDetails);
+    }
+    public function getMyProfile(Request $request) {
+
+        $userid = $request->userid;
+        $userExists = Users::where('userid', $userid)->count();
+        if(!$userExists) {
+            return response()->json(["userExists"=>0, "msg"=>"User doesn't exists!"]);
+        }
+
+        $userDetails = Users::where('userid',$userid)->first(['userid', 'email', 'username', 'interests', 'teams', 'createdteams']);
         $userDetails = $userDetails->toArray();
         $userDetails['userExists'] = "1";
 

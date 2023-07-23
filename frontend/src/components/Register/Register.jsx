@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Navigate } from 'react-router-dom';
 
-
+//hhh
 const Register = () => {
     const[name,setName]=React.useState("");
     const[email,setEmail]=React.useState("");
