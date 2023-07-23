@@ -22,7 +22,6 @@ Route::post('/user/register', [UsersController::class, 'register']);
 Route::get('/user/checkUserExistence/{userid}', [UsersController::class, 'checkUserExistence']);
 
 Route::get('/user/profile/{username}', [UsersController::class, 'showProfile']);
-Route::post('/my-profile', [UsersController::class, 'getMyProfile']);
 
 Route::get('/search', function () {
     return view('welcome');
